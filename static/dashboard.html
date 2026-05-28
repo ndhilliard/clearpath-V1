@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearPath Medical | Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="dashboard-body">
+
+    <nav class="navbar">
+        <div class="nav-brand">ClearPath Medical</div>
+        <div class="nav-right">
+            <span id="nav-username">Welcome back</span>
+            <button onclick="logout()" class="btn-logout">Sign Out</button>
+        </div>
+    </nav>
+
+    <div class="dashboard-wrapper">
+        <div class="dashboard-header">
+            <h2 id="welcome-msg">Welcome back</h2>
+            <p>Here's your patient portal overview</p>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon">📅</div>
+                <h3>Request Appointment</h3>
+                <p>Schedule a visit with your provider</p>
+                <button class="btn-secondary" onclick="openModal('appointment-modal')">Book Now</button>
+            </div>
+            <div class="card">
+                <div class="card-icon">📋</div>
+                <h3>My Appointments</h3>
+                <p>View your upcoming and past visits</p>
+                <button class="btn-secondary" onclick="openModal('appointments-modal')">View All</button>
+            </div>
+            <div class="card">
+                <div class="card-icon">💊</div>
+                <h3>Medications</h3>
+                <p>Review your current prescriptions</p>
+                <button class="btn-secondary" onclick="openModal('medications-modal')">View</button>
+            </div>
+            <div class="card">
+                <div class="card-icon">📁</div>
+                <h3>My Records</h3>
+                <p>Access your medical documents</p>
+                <button class="btn-secondary" onclick="openModal('records-modal')">View</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Request Appointment Modal -->
+    <div id="appointment-modal" class="modal-overlay hidden">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Request an Appointment</h3>
+                <button class="modal-close" onclick="closeModal('appointment-modal')">✕</button>
+            </div>
+            <div id="appointment-success" class="success-msg hidden">
+                Appointment requested successfully! We'll be in touch to confirm.
+            </div>
+            <div id="appointment-error" class="error-msg hidden"></div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="appt-date">Preferred Date</label>
+                    <input type="date" id="appt-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="appt-time">Preferred Time</label>
+                    <input type="time" id="appt-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="appt-reason">Reason for Visit</label>
+                    <textarea id="appt-reason" placeholder="Briefly describe the reason for your visit..." rows="4"></textarea>
+                </div>
+                <button class="btn-primary" onclick="submitAppointment()">Submit Request</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- My Appointments Modal -->
+    <div id="appointments-modal" class="modal-overlay hidden">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>My Appointments</h3>
+                <button class="modal-close" onclick="closeModal('appointments-modal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <div id="appointments-list">
+                    <p class="loading-text">Loading appointments...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Medications Modal -->
+    <div id="medications-modal" class="modal-overlay hidden">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Current Medications</h3>
+                <button class="modal-close" onclick="closeModal('medications-modal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="placeholder-panel">
+                    <div class="placeholder-icon">💊</div>
+                    <h4>No medications on file</h4>
+                    <p>Your prescriptions will appear here once added by your provider.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Records Modal -->
+    <div id="records-modal" class="modal-overlay hidden">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>My Medical Records</h3>
+                <button class="modal-close" onclick="closeModal('records-modal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="placeholder-panel">
+                    <div class="placeholder-icon">📁</div>
+                    <h4>No records available</h4>
+                    <p>Your medical documents will appear here once uploaded by your provider.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

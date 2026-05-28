@@ -1,0 +1,479 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #dce8f0;
+    color: #2c3e50;
+    min-height: 100vh;
+}
+
+/* ── Auth Pages ── */
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.auth-card {
+    background-color: #eef4f8;
+    border-radius: 12px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+.brand h1 {
+    font-size: 1.6rem;
+    color: #1a6fa8;
+    margin-bottom: 0.25rem;
+}
+
+.brand p {
+    color: #6b8fa8;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #3a5568;
+    margin-bottom: 0.4rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    border: 1.5px solid #b8d0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background-color: #f7fafc;
+    color: #2c3e50;
+    transition: border-color 0.2s;
+}
+
+    input:focus {
+        outline: none;
+        border-color: #1a6fa8;
+        background-color: #fff;
+    }
+
+.btn-primary {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #1a6fa8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+    .btn-primary:hover {
+        background-color: #155d8e;
+    }
+
+.alt-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: #6b8fa8;
+}
+
+    .alt-link a {
+        color: #1a6fa8;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+.error-msg {
+    background-color: #fde8e8;
+    color: #c0392b;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ── Dashboard ── */
+.dashboard-body {
+    background-color: #d0e4ef;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a6fa8;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+.nav-brand {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.btn-logout {
+    background-color: transparent;
+    border: 1.5px solid white;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background-color 0.2s;
+}
+
+    .btn-logout:hover {
+        background-color: rgba(255,255,255,0.15);
+    }
+
+.dashboard-wrapper {
+    max-width: 1000px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+}
+
+.dashboard-header {
+    margin-bottom: 2rem;
+}
+
+    .dashboard-header h2 {
+        font-size: 1.6rem;
+        color: #1a6fa8;
+    }
+
+    .dashboard-header p {
+        color: #6b8fa8;
+        margin-top: 0.25rem;
+    }
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: #eef4f8;
+    border-radius: 12px;
+    padding: 1.75rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.card-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.card h3 {
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 0.85rem;
+    color: #6b8fa8;
+    margin-bottom: 1.25rem;
+}
+
+.btn-secondary {
+    padding: 0.5rem 1.25rem;
+    background-color: #1a6fa8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+    .btn-secondary:hover {
+        background-color: #155d8e;
+    }
+
+
+/* ── Modals ── */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: #eef4f8;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    margin: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    animation: modalIn 0.2s ease;
+}
+
+@keyframes modalIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1.5px solid #b8d0e0;
+}
+
+    .modal-header h3 {
+        color: #1a6fa8;
+        font-size: 1.1rem;
+    }
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: #6b8fa8;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+    .modal-close:hover {
+        background-color: #d0e4ef;
+    }
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    border: 1.5px solid #b8d0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background-color: #f7fafc;
+    color: #2c3e50;
+    resize: vertical;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+    textarea:focus {
+        outline: none;
+        border-color: #1a6fa8;
+        background-color: #fff;
+    }
+
+.success-msg {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    margin: 0 1.5rem 1rem 1.5rem;
+}
+
+/* ── Appointment List ── */
+.appointment-item {
+    background-color: #f7fafc;
+    border: 1.5px solid #b8d0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+    .appointment-item h4 {
+        color: #1a6fa8;
+        margin-bottom: 0.25rem;
+        font-size: 0.95rem;
+    }
+
+    .appointment-item p {
+        color: #6b8fa8;
+        font-size: 0.85rem;
+        margin-bottom: 0.25rem;
+    }
+
+.status-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-top: 0.4rem;
+}
+
+.status-pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-confirmed {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.status-cancelled {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+.no-appointments {
+    text-align: center;
+    color: #6b8fa8;
+    padding: 2rem 0;
+}
+
+.loading-text {
+    color: #6b8fa8;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* ── Placeholder Panels ── */
+.placeholder-panel {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.placeholder-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.placeholder-panel h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.placeholder-panel p {
+    color: #6b8fa8;
+    font-size: 0.875rem;
+}
+
+/* ── Admin ── */
+.admin-appt-card {
+    background-color: #eef4f8;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.admin-appt-info h4 {
+    color: #1a6fa8;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.admin-appt-info p {
+    color: #6b8fa8;
+    font-size: 0.875rem;
+    margin-bottom: 0.2rem;
+}
+
+.appt-reason {
+    color: #2c3e50 !important;
+    font-style: italic;
+    margin-top: 0.25rem !important;
+}
+
+.appt-email {
+    font-size: 0.8rem !important;
+    color: #8fa8b8 !important;
+}
+
+.admin-appt-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    min-width: 120px;
+}
+
+.btn-confirm {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+    .btn-confirm:hover {
+        background-color: #1b5e20;
+    }
+
+.btn-cancel {
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+    .btn-cancel:hover {
+        background-color: #922b21;
+    }

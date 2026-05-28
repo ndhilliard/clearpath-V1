@@ -1,0 +1,6 @@
+venv/
+doctor-site.db
+_pycache__/
+*.pyc
+.env
+.vs/

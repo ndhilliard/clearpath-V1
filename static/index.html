@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearPath Medical | Login</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <div class="brand">
+                <h1>ClearPath Medical</h1>
+                <p>Patient Portal</p>
+            </div>
+
+            <div id="error-msg" class="error-msg hidden"></div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-primary">Sign In</button>
+            </form>
+
+            <p class="alt-link">Don't have an account? <a href="/register">Register here</a></p>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
